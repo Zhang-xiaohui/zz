@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/photos/main",
+    "pages/map/main",
+    "pages/message/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,28 +18,31 @@
     "borderStyle": "white",
 
     "list": [{
-      "text": "首页",
       "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
-    }, {
-      "text": "订单",
-      "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
-    }],
-
-    "items": [{
-      "name": "首页",
-      "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "iconPath": "static/images/1-1.png",
+      "selectedIconPath": "static/images/1-2.png",
+      "text": "Welcome"
+    },
+    {
+      "pagePath": "pages/photos/main",
+      "iconPath": "static/images/2-1.png",
+      "selectedIconPath": "static/images/2-2.png",
+      "text": "Photos"
+    },
+    {
+      "pagePath": "pages/map/main",
+      "iconPath": "static/images/3-1.png",
+      "selectedIconPath": "static/images/3-2.png",
+      "text": "Map"
+    },
+    {
+      "pagePath": "pages/message/main",
+      "iconPath": "static/images/5-1.png",
+      "selectedIconPath": "static/images/5-2.png",
+      "text": "Message"
     }],
     "position": "bottom"
-  }
+  },
+  "requiredBackgroundModes": ["audio"],
+  "cloud": true
 }
