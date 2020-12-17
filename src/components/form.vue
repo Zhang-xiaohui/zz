@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import tools from 'common/js/h_tools'
+import tools from '@/common/js/h_tools'
 export default {
   name: 'Form',
   data () {

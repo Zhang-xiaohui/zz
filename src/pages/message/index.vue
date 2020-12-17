@@ -1,50 +1,50 @@
 <template>
-    <div class="message">
-        <scroll-view
-            scroll-y
-            @scroll="scroll"
-            class="box"
-        >
-            <p class="place"></p>
-            <div class="item" v-for="(item, index) in messageList" :key="index">
-                <image class="left" :src="item.url"/>
-                <div class="right">
-                    <div class="top">
-                        <span class="top-l">{{item.name}}</span>
-                        <span class="top-r">{{item.time}}</span>
-                    </div>
-                    <p class="con">{{item.desc}}</p>
-                </div>
+  <div class="message">
+    <scroll-view
+      scroll-y
+      @scroll="scroll"
+      class="box"
+    >
+      <p class="place"></p>
+      <div class="item" v-for="(item, index) in messageList" :key="index">
+          <image class="left" :src="item.url"/>
+          <div class="right">
+            <div class="top">
+              <span class="top-l">{{item.name}}</span>
+              <span class="top-r">{{item.time}}</span>
             </div>
-            <p class="place-end"></p>
-        </scroll-view>
-        <div class="bottom">
-            <button class="left" lang="zh_CN" open-type="getUserInfo" @getuserinfo="toMessage">说点啥吧</button>
-            <button class="right" @tap="toForm">我要出席</button> 
-        </div>
-        <div class="dialog" v-show="isOpen">
-            <textarea focus="true" maxlength="80" class="desc" placeholder="在这里输入您想要说的话" name="textarea" placeholder-style="color:#ccc;" v-model="desc"/>
-            <div class="btn">
-                <button class="left" @tap="sendMessage">发送留言</button>
-                <button class="right" @tap="cancel">取消</button>
-            </div>
-        </div>
-        <div class="video-dialog" @tap="toVideo">
-            <image src="../../static/images/video1.png"/>
-        </div>
-        <div class="form-dialog" @tap="lookList">
-            <image src="../../static/images/form.png"/>
-        </div>
-        <div class="video" v-show="isVideo">
-            <h-video @closeVideo="closeVideo"></h-video>
-        </div>
-        <div class="form" v-show="isForm">
-            <h-form @closeForm="closeForm" @getFromlist="getFromlist"></h-form>
-        </div>
-        <div class="form-list" v-show="isFormlist">
-            <h-formlist @closeFormlist="closeFormlist" :formList="formList"></h-formlist>
-        </div>
+            <p class="con">{{item.desc}}</p>
+          </div>
+      </div>
+      <p class="place-end"></p>
+    </scroll-view>
+    <div class="bottom">
+      <button class="left" lang="zh_CN" open-type="getUserInfo" @getuserinfo="toMessage">说点啥吧</button>
+      <button class="right" @tap="toForm">我要出席</button> 
     </div>
+    <div class="dialog" v-show="isOpen">
+      <textarea focus="true" maxlength="80" class="desc" placeholder="在这里输入您想要说的话" name="textarea" placeholder-style="color:#ccc;" v-model="desc"/>
+      <div class="btn">
+        <button class="left" @tap="sendMessage">发送留言</button>
+        <button class="right" @tap="cancel">取消</button>
+      </div>
+    </div>
+    <div class="video-dialog" @tap="toVideo">
+        <image src="../../static/images/video1.png"/>
+    </div>
+    <div class="form-dialog" @tap="lookList">
+        <image src="../../static/images/form.png"/>
+    </div>
+    <div class="video" v-show="isVideo">
+        <h-video @closeVideo="closeVideo"></h-video>
+    </div>
+    <div class="form" v-show="isForm">
+        <h-form @closeForm="closeForm" @getFromlist="getFromlist"></h-form>
+    </div>
+    <div class="form-list" v-show="isFormlist">
+        <h-formlist @closeFormlist="closeFormlist" :formList="formList"></h-formlist>
+    </div>
+  </div>
 </template>
 
 <script>

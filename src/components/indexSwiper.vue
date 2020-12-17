@@ -16,7 +16,7 @@
           <image
             mode="aspectFill"
             lazy-load="true"
-            :src="item"
+            :src="item.src"
             class="slide-image"
           />
         </swiper-item>

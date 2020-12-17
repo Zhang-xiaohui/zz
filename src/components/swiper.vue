@@ -1,19 +1,19 @@
 <template>
-    <div class="box">
-        <swiper class="swiper"
-            :autoplay="true"
-            :circular="true"
-            current=0
-            :indicator-dots="true"
-        >
-            <block v-for="(item, index) in list" :key="index">
-                <swiper-item class="item">
-                    <image mode="aspectFill" lazy-load="true" :src="item" class="slide-image"/>
-                </swiper-item>
-            </block>
-        </swiper>
-        <image v-if="isGif" class="img" src="../../static/images/save_the_date_pu.gif"/>
-    </div>
+	<div class="box">
+		<swiper class="swiper"
+			:autoplay="true"
+			:circular="true"
+			current=0
+			:indicator-dots="true"
+	>
+		<block v-for="(item, index) in list" :key="index">
+			<swiper-item class="item">
+				<image mode="aspectFill" lazy-load="true" :src="item.src" class="slide-image"/>
+			</swiper-item>
+		</block>
+	</swiper>
+		<image v-if="isGif" class="img" src="../../static/images/save_the_date_pu.gif"/>
+	</div>
 </template>
 
 <script>

@@ -14,43 +14,30 @@ export default {
   onShow () {
     const that = this
     that.isGif = !that.isGif
-    that.getList()
   },
 
   data () {
     return {
       list: [{
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/2.jpg'
       },
       {
-        src: require('../../static/photos/an.jpg')
+        src: '../../static/images/an.jpg'
       },
       {
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/2.jpg'
       },
       {
-        src: require('../../static/photos/an.jpg')
+        src: '../../static/images/an.jpg'
       },
       {
-        src: require('../../static/photos/2.jpg')
-      },{
-        src: require('../../static/photos/an.jpg')
-      },
-      {
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/an.jpg'
       }],
       isGif: false
     }
   },
   methods: {
-    // getList () {
-    //   const that = this
-    //   const db = wx.cloud.database()
-    //   const banner = db.collection('indexBanner')
-    //   banner.get().then(res => {
-    //     that.list = res.data[0].indexBanner
-    //   })
-    // }
+
   }
 }
 </script>

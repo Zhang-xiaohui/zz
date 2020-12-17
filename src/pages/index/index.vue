@@ -72,24 +72,19 @@ export default {
     return {
       isPlay: true,
       list: [{
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/2.jpg'
       },
       {
-        src: require('../../static/photos/an.jpg')
+        src: '../../static/images/an.jpg'
       },
       {
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/2.jpg'
       },
       {
-        src: require('../../static/photos/an.jpg')
+        src: '../../static/images/an.jpg'
       },
       {
-        src: require('../../static/photos/2.jpg')
-      },{
-        src: require('../../static/photos/an.jpg')
-      },
-      {
-        src: require('../../static/photos/2.jpg')
+        src: '../../static/images/an.jpg'
       }],
       audioCtx: "",
       audioUrl: "",
@@ -145,52 +140,10 @@ export default {
   },
 };
 </script>
+<style scoped>
 
+</style>
 <style scoped lang="stylus">
-@keyframes musicRotate {
-  from {
-    -webkit-transformb: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes musicStop {
-  from {
-    -webkit-transform: rotate(20deg);
-  }
-
-  to {
-    -webkit-transform: rotate(0deg);
-  }
-}
-
-@keyframes musicStart {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(20deg);
-  }
-}
-
-@keyframes infoAnimation {
-  0% {
-    -webkit-transform: scale(1) translate(0, 0);
-  }
-
-  50% {
-    -webkit-transform: scale(0.9) translate(5px, 5px);
-  }
-
-  100% {
-    -webkit-transform: scale(1) translate(0, 0);
-  }
-}
-
 .index {
   height: 100%;
   position: relative;
@@ -238,7 +191,7 @@ export default {
       height: 60rpx;
       margin-left: -10rpx;
       transform-origin: top;
-      -webkit-transform: rotate(20deg);
+      transform: rotate(20deg);
     }
 
     .playImg {
