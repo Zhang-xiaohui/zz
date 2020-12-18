@@ -31,7 +31,9 @@
   "appid": "wxf30d13b84db9f4cd",
   "projectname": "zz",
   "simulatorType": "wechat",
+  "cloudfunctionRoot": "static/functions/",
   "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

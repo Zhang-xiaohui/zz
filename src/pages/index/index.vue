@@ -71,21 +71,7 @@ export default {
   data() {
     return {
       isPlay: true,
-      list: [{
-        src: '../../static/images/2.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      },
-      {
-        src: '../../static/images/2.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      }],
+      list: ['../../static/images/2.jpg', '../../static/images/2.jpg'],
       audioCtx: "",
       audioUrl: "",
     };
@@ -94,43 +80,46 @@ export default {
     const that = this;
     that.audioCtx = wx.createAudioContext("myAudio");
     that.isPlay = true;
-    // that.getMusicUrl();
+    that.getMusicUrl();
   },
-
   methods: {
     audioPlay() {
       const that = this;
       if (that.isPlay) {
-        // that.audioCtx.pause();
+        that.audioCtx.pause();
         that.isPlay = false;
         tools.showToast("您已暂停音乐播放~");
       } else {
-        // that.audioCtx.play();
+        that.audioCtx.play();
         that.isPlay = true;
         tools.showToast("背景音乐已开启~");
       }
     },
 
-    // getList() {
-    //   const that = this;
-    //   const db = wx.cloud.database();
-    //   const banner = db.collection("banner");
-    //   banner.get().then((res) => {
-    //     that.list = res.data[0].bannerList;
-    //     console.log(that.list);
-    //   });
-    // },
+    getList() {
+      const that = this;
+      const db = wx.cloud.database();
+      const banner = db.collection("banner");
+      
+      banner.get().then((res) => {
+        if (res.data.length > 0) {
+          that.list = res.data[0].srcList;
+        }
+      });
+    },
 
-    // getMusicUrl() {
-    //   const that = this;
-    //   const db = wx.cloud.database();
-    //   const music = db.collection("music");
-    //   music.get().then((res) => {
-    //     that.audioUrl = res.data[0].musicUrl;
-    //     that.audioCtx.play();
-    //     that.getList();
-    //   });
-    // },
+    getMusicUrl() {
+      const that = this;
+      const db = wx.cloud.database();
+      const music = db.collection("music");
+      music.get().then((res) => {
+        if(res.data.length > 0) {
+          that.audioUrl = res.data[0].src;
+          that.audioCtx.play();
+        }
+        that.getList();
+      });
+    },
   },
 
   onShareAppMessage: function (res) {
@@ -141,7 +130,61 @@ export default {
 };
 </script>
 <style scoped>
+@keyframes musicRotate {
+  from {
+    -webkit-transformb: rotate(0deg);
+  }
 
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.music_icon {
+  animation: musicRotate 3s linear infinite;
+}
+
+@keyframes musicStop {
+  from {
+    -webkit-transform: rotate(20deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+.music_play {
+  animation: musicStop 1s linear forwards;
+}
+
+@keyframes musicStart {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(20deg);
+  }
+}
+.music_play {
+  animation: musicStart 1s linear forwards;
+}
+
+@keyframes infoAnimation {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    -webkit-transform: scale(0.9) translate(5px, 5px);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+  }
+}
+.info {
+  animation: infoAnimation 10s linear infinite;
+}
 </style>
 <style scoped lang="stylus">
 .index {
@@ -181,25 +224,12 @@ export default {
       width: 60rpx;
       height: 60rpx;
     }
-
-    .music_icon {
-      animation: musicRotate 3s linear infinite;
-    }
-
     .music_play {
       width: 28rpx;
       height: 60rpx;
       margin-left: -10rpx;
       transform-origin: top;
       transform: rotate(20deg);
-    }
-
-    .playImg {
-      animation: musicStop 1s linear forwards;
-    }
-
-    .pauseImg {
-      animation: musicStart 1s linear forwards;
     }
   }
 
@@ -211,7 +241,6 @@ export default {
     bottom: 40rpx;
     left: 50rpx;
     padding: 10rpx;
-    animation: infoAnimation 12s linear infinite;
 
     .content {
       width: 626rpx;

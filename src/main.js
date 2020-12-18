@@ -4,9 +4,9 @@ import App from './App'
 Vue.config.productionTip = false
 App.mpType = 'app'
 
-// wx.cloud.init({
-//   env: '云开发环境ID'
-// })
+wx.cloud.init({
+  env: 'w804340821-5gl2pxi7ea138ab1'
+})
 
 
 const app = new Vue(App)

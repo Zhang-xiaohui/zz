@@ -14,30 +14,26 @@ export default {
   onShow () {
     const that = this
     that.isGif = !that.isGif
+    that.getList()
   },
 
   data () {
     return {
-      list: [{
-        src: '../../static/images/2.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      },
-      {
-        src: '../../static/images/2.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      },
-      {
-        src: '../../static/images/an.jpg'
-      }],
+      list: [],
       isGif: false
     }
   },
   methods: {
-
+    getList () {
+      const that = this
+      const db = wx.cloud.database()
+      const photos = db.collection('photos')
+      photos.get().then(res => {
+        if (res.data.length > 0) {
+          that.list = res.data[0].srcList
+        }
+      })
+    }
   }
 }
 </script>
