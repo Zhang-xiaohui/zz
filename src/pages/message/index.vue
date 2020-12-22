@@ -30,19 +30,19 @@
       </div>
     </div>
     <div class="video-dialog" @tap="toVideo">
-        <image src="../../static/images/video1.png"/>
+      <image src="../../static/images/video1.png"/>
     </div>
     <div class="form-dialog" @tap="lookList">
-        <image src="../../static/images/form.png"/>
+      <image src="../../static/images/form.png"/>
     </div>
     <div class="video" v-show="isVideo">
-        <h-video @closeVideo="closeVideo"></h-video>
+      <h-video @closeVideo="closeVideo"></h-video>
     </div>
     <div class="form" v-show="isForm">
-        <h-form @closeForm="closeForm" @getFromlist="getFromlist"></h-form>
+      <h-form @closeForm="closeForm" @getFromlist="getFromlist"></h-form>
     </div>
     <div class="form-list" v-show="isFormlist">
-        <h-formlist @closeFormlist="closeFormlist" :formList="formList"></h-formlist>
+      <h-formlist @closeFormlist="closeFormlist" :formList="formList"></h-formlist>
     </div>
   </div>
 </template>
@@ -183,9 +183,7 @@ export default {
         data: {
           user: that.userInfo
         }
-      }).then(res => {
-        console.log(res)
-      })
+      }).then(res => {})
     },
 
     getOpenId () {

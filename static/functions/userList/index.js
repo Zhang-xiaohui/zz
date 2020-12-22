@@ -5,7 +5,6 @@ const MAX_LIMIT = 100
 exports.main = async (event, context) => {
   // 先取出集合记录总数
   const countResult = await db.collection('user').count()
-  console.log('countResult', countResult)
   const total = countResult.total
   // 计算需分几次取
   const batchTimes = Math.ceil(total / 100)

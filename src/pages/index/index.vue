@@ -3,10 +3,7 @@
     <div class="bg-swiper">
       <index-swiper :list="list"></index-swiper>
     </div>
-    <image
-      class="inv"
-      src="../../static/images/inv.png"
-    />
+    <!-- <image class="inv" src="../../static/images/heart-animation.gif"/> -->
     <div
       class="bg_music"
       v-if="isPlay"
@@ -203,10 +200,10 @@ export default {
 
   .inv {
     position: absolute;
+    height 150rpx
+    width 200rpx
     top: 20rpx;
-    left: 89rpx;
-    width: 572rpx;
-    height: 69rpx;
+    left: 12rpx;
     z-index: 9;
   }
 

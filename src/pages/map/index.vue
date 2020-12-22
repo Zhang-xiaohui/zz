@@ -1,7 +1,7 @@
 <template>
   <div class="map">
     <image mode="aspectFit" class="head-img" src="../../static/images/t1.png"/>
-    <map class="content" id="map" longitude="114.639135" latitude="34.200500" :markers="markers" scale="18" @tap="toNav">
+    <map class="content" id="map" longitude="114.639135" latitude="34.200500" :markers="markers" scale="15" @tap="toNav">
     </map>
     <div class="call">
       <div class="left" @tap="linkHe">
@@ -38,20 +38,20 @@ export default {
       wx.openLocation({
         latitude: 34.200500,
         longitude: 114.639135,
-        scale: 18
+        scale: 15
       })
     },
 
     linkHe () {
       wx.makePhoneCall({
-        phoneNumber: '13735301314'
+        phoneNumber: '137xxxx1314'
       })
     },
 
     linkShe () {
       wx.showModal({
         title: '温馨提示',
-        content: '还是算了吧，别打了，忙着呢！！！',
+        content: '想打电话也不想你打 ^_^ ',
         showCancel: false
       })
     }

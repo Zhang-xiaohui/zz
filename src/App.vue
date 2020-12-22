@@ -24,9 +24,6 @@ export default {
       mpvue.setStorageSync('logs', logs)
     }
   },
-  log () {
-    console.log(`log at:${Date.now()}`)
-  },
   onLaunch() {
     // 检测小程序是否有新版本更新
     if (wx.canIUse("getUpdateManager")) {
@@ -63,7 +60,7 @@ export default {
         title: "提示",
         confirmColor: "#5BB53C",
         content:
-          "当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。",
+          "当前微信版本过低，请升级到最新微信版本后重试。",
       });
     }
   },

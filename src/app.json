@@ -22,7 +22,7 @@
       "pagePath": "pages/index/main",
       "iconPath": "static/images/1-1.png",
       "selectedIconPath": "static/images/1-2.png",
-      "text": "Welcome"
+      "text": "Blingbling"
     },
     {
       "pagePath": "pages/photos/main",
@@ -40,7 +40,7 @@
       "pagePath": "pages/blessing/main",
       "iconPath": "static/images/4-1.png",
       "selectedIconPath": "static/images/4-2.png",
-      "text": "好友祝福"
+      "text": "Blessing"
     },
     {
       "pagePath": "pages/message/main",
