@@ -3,8 +3,7 @@
     "pages/index/main",
     "pages/photos/main",
     "pages/map/main",
-    "pages/blessing/main",
-    "pages/message/main"
+    "pages/blessing/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,12 +40,6 @@
       "iconPath": "static/images/4-1.png",
       "selectedIconPath": "static/images/4-2.png",
       "text": "Blessing"
-    },
-    {
-      "pagePath": "pages/message/main",
-      "iconPath": "static/images/5-1.png",
-      "selectedIconPath": "static/images/5-2.png",
-      "text": "Message"
     }],
     "position": "bottom"
   },

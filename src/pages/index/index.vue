@@ -40,7 +40,6 @@
         <h1>Mr. & Miss.</h1>
         <p>谨定于 中午12:00</p>
         <p>农历 腊月 举办婚礼</p>
-        <p>席设：</p>
         <p>地址：</p>
         <image
           src="../../static/images/we.png"

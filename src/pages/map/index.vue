@@ -6,11 +6,11 @@
     <div class="call">
       <div class="left" @tap="linkHe">
         <image src="../../static/images/he.png"/>
-        <span>打给他</span>
+        <span>call</span>
       </div>
       <div class="right" @tap="linkShe">
         <image src="../../static/images/she.png"/>
-        <span>打给她</span>
+        <span>call</span>
       </div>
     </div>
     <image class="footer" src="../../static/images/grren-flower-line.png"/>
