@@ -3,7 +3,7 @@
     <div class="bg-swiper">
       <index-swiper :list="list"></index-swiper>
     </div>
-    <!-- <image class="inv" src="../../static/images/heart-animation.gif"/> -->
+    <image class="inv" src="../../static/images/imation.gif"/>
     <div
       class="bg_music"
       v-if="isPlay"

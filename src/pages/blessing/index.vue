@@ -1,6 +1,6 @@
 <template>
   <div class="greet">
-    <image class="head" src="../../static/images/heart-animation.gif"/>
+    <image class="head" src="../../static/images/imation.gif"/>
     <scroll-view
       scroll-y
       class="box"
