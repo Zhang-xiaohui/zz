@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       isPlay: true,
-      list: ['../../static/images/2.jpg', '../../static/images/2.jpg'],
+      list: [],
       audioCtx: "",
       audioUrl: "",
     };
@@ -115,7 +115,7 @@ export default {
         }
         that.getList();
       });
-    },
+    }
   },
 
   onShareAppMessage: function (res) {

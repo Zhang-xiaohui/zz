@@ -51,7 +51,7 @@ export default {
     linkShe () {
       wx.showModal({
         title: '温馨提示',
-        content: '想打电话也不想你打 ^_^ ',
+        content: '想打电话 也木有号码！！！',
         showCancel: false
       })
     }

@@ -14,6 +14,15 @@
     <div class="bottom">
       <button class="left" lang="zh_CN" open-type="getUserInfo" @getuserinfo="sendGreet">送上祝福</button>
     </div>
+    <div class="video-dialog" @tap="toVideo">
+      <image src="../../static/images/video1.png"/>
+    </div>
+    <div class="video" v-show="isVideo">
+      <video id="myVideo" :src="videoUrl" controls poster="视频封面地址"></video>
+      <div class="btn-area">
+        <image src="../../static/images/close1.png" @tap="close"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,15 +33,36 @@ export default {
   data () {
     return {
       userList: [],
-      openId: '',
-      userInfo: ''
+      openId: "",
+      userInfo: "",
+      isVideo: false,
+      videoUrl: null
     }
   },
   onShow () {
-    const that = this
-    that.getUserList()
+    const that = this;
+    that.getUserList();
+    that.videoContext = wx.createVideoContext('myVideo');
+    // that.getVideoUrl();
   },
   methods: {
+    getVideoUrl() {
+      const that = this;
+      const db = wx.cloud.database();
+      const video = db.collection("video");
+      video.get().then((res) => {
+        if(res.data.length > 0) {
+          that.videoUrl = res.data[0].src;
+          that.videoContext.play();
+        }
+      });
+    },
+
+    close () {
+      const that = this
+      that.isVideo = false
+    },
+
     sendGreet (e) {
       const that = this
       if (e.target.errMsg === 'getUserInfo:ok') {
@@ -92,7 +122,13 @@ export default {
       }).then(res => {
         that.userList = res.result.data.reverse()
       })
+    },
+
+    toVideo () {
+      const that = this
+      that.isVideo = true
     }
+
   }
 }
 </script>
@@ -172,4 +208,34 @@ export default {
         color #444
         text-align center
         width 100%
+    .video-dialog
+        position fixed
+        right 10rpx
+        top 50rpx
+        width 70rpx
+        height 70rpx
+        box-shadow 0 0 10rpx rgba(0, 0, 0, 0.1)
+        background #fff
+        border-radius 16rpx
+        image
+            width 100%
+            height 100%
+    .video
+        position fixed
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background #fff
+        z-index 99
+        #myVideo
+          height 90%
+          width 100%
+          margin-bottom 20rpx
+        .btn-area
+          image
+            width 80rpx
+            height 80rpx
+            background #fff
+            margin 0 auto
 </style>
