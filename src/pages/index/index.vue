@@ -37,10 +37,10 @@
       :animation="animationData"
     >
       <div class="content">
-        <h1>Mr. & Miss.</h1>
-        <p>谨定于 中午12:00</p>
-        <p>农历 腊月 举办婚礼</p>
-        <p>地址：</p>
+        <h1>Mr.zh & Miss.lw</h1>
+        <p>谨定于2021.2.07 中午12:00</p>
+        <p>农历 腊月二十六 举办婚礼</p>
+        <p>执子之手 与子偕老</p>
         <image
           src="../../static/images/we.png"
           class="img_footer"

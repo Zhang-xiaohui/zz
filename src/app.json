@@ -21,25 +21,25 @@
       "pagePath": "pages/index/main",
       "iconPath": "static/images/1-1.png",
       "selectedIconPath": "static/images/1-2.png",
-      "text": "Blingbling"
+      "text": "美美哒"
     },
     {
       "pagePath": "pages/photos/main",
       "iconPath": "static/images/2-1.png",
       "selectedIconPath": "static/images/2-2.png",
-      "text": "Photos"
+      "text": "照片"
     },
     {
       "pagePath": "pages/map/main",
       "iconPath": "static/images/3-1.png",
       "selectedIconPath": "static/images/3-2.png",
-      "text": "Map"
+      "text": "导航"
     },
     {
       "pagePath": "pages/blessing/main",
       "iconPath": "static/images/4-1.png",
       "selectedIconPath": "static/images/4-2.png",
-      "text": "Blessing"
+      "text": "祝福"
     }],
     "position": "bottom"
   },
